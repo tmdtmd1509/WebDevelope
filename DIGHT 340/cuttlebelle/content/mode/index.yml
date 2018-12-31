@@ -1,0 +1,14 @@
+title: mode
+
+header:                # Our header part of the layout
+  - /_shared/header.md # This is the header and we got it from another folder we use to share partials
+  - /_shared/nav.md
+
+main:
+ - body.md
+ - rift.md
+ - treeline.md
+ - howling.md
+
+footer:
+ - /_shared/footer.md
