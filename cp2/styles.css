@@ -1,0 +1,96 @@
+body {
+    text-align: center;
+    background-image: url(images/background.jpg);
+    background-size: 100% auto;
+    background-repeat: repeat;
+    margin: 20px 0;
+    position: relative;
+    color: #cbcbcb;
+}
+
+h1 {
+    text-align: center;
+    font-family: verdana;
+    color: #dac129;
+}
+
+h4 {
+    text-align: center;
+    font-family: verdana;
+    color: #a21202;
+    font-size: 30px;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    margin: 10px;
+    background: #a21202 !important;
+    border-color: #dac129;
+    color: white;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #a1cfff inset;
+}
+
+div {
+    margin: 0 auto;
+}
+
+a {
+    color: #a21202;
+}
+
+#results {
+    padding-bottom: 60px;
+    height: 100%;
+}
+#userResults {
+    margin: 10px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    border-style: solid;
+    border-color: #c3c3c3;
+    border-width: 5px;
+    border-radius: 5px;
+    //outline-offset: inherit;
+}
+
+#matchResults {
+    margin: 10px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: fit-content;
+    border-style: solid;
+    border-color: #c3c3c3;
+    border-width: 5px;
+    border-radius: 5px;
+    //outline-offset: inherit;
+}
+
+footer {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-top: 5px solid #c3c3c3;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+}
+
+.footer-spacing {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footer-comment {
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.feature-3-adjustment {
+    object-position: 10% 80%;
+}
