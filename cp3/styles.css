@@ -1,0 +1,231 @@
+/*:root { --translateValue: 0; }*/
+
+html,
+body,
+main {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #26dd5c;
+    color: brown;
+}
+
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: #47da45;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+h1 {
+    font-size: 30px;
+    color: red;
+    text-align: center;
+    padding: 5px;
+    /*border-bottom: 2px black solid;*/
+}
+
+h2 {
+    font-size: 20px;
+    color: #a5cd0c;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    font-size: 12px;
+    color: darkblue;
+    padding: 5px;
+    text-align: center;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #26dd5c;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+section {
+    display: flex;
+}
+
+aside {
+    flex: 1
+}
+
+article {
+    flex: 4
+}
+
+img {
+    width: 100%;
+}
+
+
+
+/* List */
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+
+.list {
+    background: #fff;
+    width: max-content;
+    min-height: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    display: inline-block;
+    text-align: center;
+}
+
+.delete {
+    display: none;
+    margin-left: auto;
+}
+
+li:hover .delete {
+    display: block;
+}
+
+label {
+    width: 400px;
+    text-align: center;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+/* Form */
+form {
+    text-align: center;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+input[type=text] {
+    font-size: 1em;
+}
+.value {
+    width: 50px;
+}
+button {
+    font-family: 'Arvo';
+    font-size: 1em;
+    text-align: center;
+}
+
+.submit_button {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Controls */
+
+.controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.home_container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.introduction {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.money_earned {
+    font-size: 30px;
+    color: #ff2053;
+    text-align: center;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+    flex: 33%;
+    max-width: 33%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+.review_box {
+    align-self: center;
+    width: 500px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+    .review_box {
+        align-self: center;
+        width: 200px;
+        height: 30px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+        margin: 5px auto;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+    .review_box {
+        align-self: center;
+        width: 200px;
+        height: 30px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+        margin: 5px auto;
+    }
+}
+

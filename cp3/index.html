@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <title>Creative Project 3</title>
+</head>
+
+<body>
+  <!--header start-->
+  <header>
+    If you do your work, I will give you some  <b>pocket money</b>
+  </header>
+  <!--header end-->
+
+  <!--menu start-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="pages/child.html">Child</a></li>
+        <li><a href="pages/parent.html">Parent</a></li>
+        <li><a href="pages/settings.html">Settings</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!--menu end-->
+
+  <div id="app">
+    <!--<div>-->
+      <!--<h1>Progress</h1>-->
+    <!--</div>-->
+    <div>
+      <h1>Total Earned Pocket Money</h1>
+      <p class="money_earned">$ {{ earned }}</p>
+    </div>
+    <div>
+      <h1>A List of Things To Do</h1>
+      <p v-show="activeTodos.length === 0">You are done with all your tasks! Good job!</p>
+    </div>
+
+    <form v-on:submit.prevent="addItem">
+      <input type="text" v-model="message" placeholder="task">
+      <input class="value" type="number" v-model="value" placeholder="$value">
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="controls">
+      <button v-on:click="showAll()">Show All</button>
+      <button v-on:click="showActive()">Show Active</button>
+      <button v-on:click="showCompleted()">Show Completed</button>
+      <button v-on:click="deleteCompleted()">Delete Completed</button>
+    </div>
+
+    <ul>
+      <li class="list" v-for="item in filteredTodos" draggable='true' v-on:dragstart="dragItem(item)" v-on:dragover.prevent v-on:drop="dropItem(item)">
+        <input type="checkbox" v-model="item.completed" v-on:click="completeItem(item)" />
+        <label v-bind:class="{ completed: item.completed }">{{ item.text }}</label>
+        <label>you earn ${{ item.money }}</label>
+	<button v-on:click="deleteItem(item)" class="delete">X</button>
+      </li>
+    </ul>
+  </div>
+
+  <!--footer start-->
+  <footer>
+    &copy; 2018 Heeseung Hwang. All rights reserved.
+    <br> <a href="https://github.com/BYU-CS-260-Winter-2019/lab-1-tmdtmd1509">
+    Heeseung Hwang's GitHub repository.</a>
+  </footer>
+  <!--footer end-->
+
+  <!--scripts-->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
