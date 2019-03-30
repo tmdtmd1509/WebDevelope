@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <title>Creative Project 3</title>
+</head>
+
+<body>
+  <!--header start-->
+  <header>
+    If you do your work, I will give you some  <b>pocket money</b>
+  </header>
+  <!--header end-->
+
+  <div id="app">
+    <!--menu start-->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <h2>Pocket Money Collector</h2>
+        <p v-if="user">Welcome {{user.username}}
+          <br><a href="#" @click="logout">Logout</a></p>
+        <p v-else><a href="#" @click="toggleForm">Register or Login</a></p>
+      </div>
+    </nav>
+    <!--menu end-->
+
+    <!-- login window start -->
+    <transition v-if="showForm" name="modal">
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+
+            <div class="modal-header">
+              <h1 class="modal-title">Register or Login</h1>
+              <p>If you are just trying to login, you don't need a varify number</p>
+            </div>
+            <div class="modal-body">
+              <p v-if="error" class="error">{{error}}</p>
+              <label>Username</label>
+              <br>
+              <input v-model="username">
+              <br>
+              <label>Password</label>
+              <br>
+              <input type="password" v-model="password">
+              <br>
+              <label>Varify Number</label>
+              <br>
+              <input type="password" v-model="varifynumber">
+            </div>
+            <div class="modal-footer">
+              <button @click="register" type="button">Register</button>
+              <button @click="login" type="button" class="other">Login</button>
+              <button @click="toggleForm" type="button" class="close">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>  
+    <!-- login window end -->
+        <!-- total money earned -->
+    <div>
+      <h1>Total Earned Pocket Money</h1>
+      <p class="money_earned">$ {{ totalEarned }}</p>
+    </div>
+
+    <!-- add task start -->
+    <p v-show="todos.length === 0">Add a task to earn some pocket money!</p>
+
+    <form v-on:submit.prevent="addItem">
+      <input type="text" v-model="message" placeholder="task">
+      <input class="value" type="number" v-model="value" placeholder="$value">
+      <button type="submit">Add</button>
+      <p v-show="user == null">Please Log in to add</p>
+    </form>
+    <!-- add task end -->
+
+    <!-- list of add start-->
+    <div>
+      <ul>
+        <li class="list" v-for="item in todos" draggable='true' v-on:dragstart="dragItem(item)" v-on:dragover.prevent v-on:drop="dropItem(item)">
+          <input type="checkbox" v-model="item.completed" v-on:click="" />
+          <label v-bind:class="{ completed: item.completed }">{{ item.text }}</label>
+          <label>you earn ${{ item.money }}</label>
+          <button v-on:click="deleteItem(item)" class="delete">X</button>
+        </li>
+      </ul>
+          <!-- possible -->
+      <div>
+        <h2>Total you can earn</h2>
+        <p class="money_possible">$ {{ possible }}</p>
+      </div>
+          <!-- approve button -->
+      <p>You need to get approved by your parent to add your task</p>
+      <button @click="toggleForm2" type="button">Approve</button>
+    </div>
+    <!-- list of add end -->
+
+    <!-- todo list start -->
+    <div>
+      <h1>A List of Things To Do</h1>
+    </div>
+        <!-- controler -->
+    <div class="controls">
+      <button v-on:click="showAll()">Show All</button>
+      <button v-on:click="showActive()">Show Active</button>
+      <button v-on:click="showCompleted()">Show Completed</button>
+      <!-- <button v-on:click="deleteCompleted()">Delete Completed</button> -->
+    </div>
+        <!-- todo list logged  in-->
+    <div v-if="user">
+      <ul>
+        <li class="list" v-for="ticket in filteredTickets" draggable='true' v-on:dragstart="dragItem(ticket)" v-on:dragover.prevent v-on:drop="dropItem(ticket)">
+          <input type="checkbox" v-model="ticket.completed" v-on:click="completeTicket(ticket)" />
+          <label v-bind:class="{ completed: ticket.completed }">{{ ticket.text }}</label>
+          <label>you earn ${{ ticket.money }}</label>
+          <button v-on:click="deleteTicket(ticket)" class="delete">X</button>
+        </li>
+      </ul>
+    </div>
+        <!-- todo list sample (looged out) -->
+    <div v-else>
+      <ul>
+        <li class="list">
+          <input type="checkbox" />
+          <label>Example task1</label>
+          <label>you earn $3</label>
+        </li>
+        <li class="list">
+          <input type="checkbox" />
+          <label>Example task2</label>
+          <label>you earn $5</label>
+        </li>
+      </ul>
+    </div>
+    <!-- todo list end -->
+
+    <!-- varify window start -->
+    <transition v-if="showForm2" name="modal">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-container">
+  
+              <div class="modal-header">
+                <h1 class="modal-title">Parent Verify</h1>
+              </div>
+              <div class="modal-body">
+                <p v-if="error" class="error">{{error}}</p>
+                <label>Varify Number</label>
+                <br>
+                <input v-model="varifynumber">
+                <br>
+              </div>
+              <div class="modal-footer">
+                <button @click="varify" type="button" class="other">Varify</button>
+                <button @click="toggleForm2" type="button" class="close">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition> 
+      <!-- varify window end -->
+  </div>
+
+  <!--footer start-->
+  <footer>
+    &copy; 2018 Heeseung Hwang. All rights reserved.
+    <br> <a href="https://github.com/BYU-CS-260-Winter-2019/lab-1-tmdtmd1509">
+    Heeseung Hwang's GitHub repository.</a>
+  </footer>
+  <!--footer end-->
+
+  <!--scripts-->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
