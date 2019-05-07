@@ -1,0 +1,311 @@
+:root {
+    --byu-color:#002E5D;
+}
+
+html,
+body
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/*header*/
+header {
+    color: var(--byu-color);
+    background-image: url(../images/heaven.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: 3000px;
+    background-position: center;
+    font-size: 30px;
+    text-align: center;
+    padding: 30px;
+}
+header span {
+    font-family: 'Just Another Hand', cursive;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+/*nav bar*/
+.navbar {
+    margin: 0 !important;
+    border: 1.5px solid !important;
+    border-right: none !important;
+    border-left: none !important;
+    background-color: var(--byu-color) !important;
+}
+.navbar-inverse {
+    border-color: var(--byu-color) !important;
+    background-image: url(../images/musicbg.jpg) !important;
+}
+
+.container-fluid {
+    background-image: url(../images/musicbg.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus {
+    background-color: var(--byu-color) !important;
+    color: white !important;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover {
+    color: #dfe7f5 !important;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: white !important;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: var(--byu-color) !important;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: var(--byu-color) !important;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: var(--byu-color) !important;
+}
+
+.navbar-brand {
+    color: var(--byu-color)!important;
+}
+
+h1 {
+    font-size: 30px;
+    color: red;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 2px black solid;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    font-size: 12px;
+    color: var(--byu-color);
+    padding: 0 15px;
+}
+
+footer {
+    background-image: url(../images/musicbg.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: var(--byu-color);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+section {
+    display: flex;
+}
+
+aside {
+    flex: 1
+}
+
+article {
+    flex: 4
+}
+
+img {
+    margin: 0;
+    width: 100%;
+}
+
+hr {
+    border: 0;
+    height: 0.08rem !important;
+    width: 50%;
+    margin: 50px auto !important;
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/*index*/
+.home_container {
+    text-align: center;
+}
+.home_container img:hover {
+    opacity: 0.8;
+}
+.home_container .introduction {
+    margin: 50px;
+    text-align: center;
+    /*transform: translate(-50%, -50%);*/
+}
+.home_container .main_content {
+    margin: 0;
+    text-align: center;
+}
+.home_container .main_content p {
+    max-width: 60%;
+    text-align: center;
+    margin: auto;
+}
+
+
+/*about*/
+.banner img {
+    height: 300px;
+}
+.faculties {
+    padding-bottom: 30px;
+}
+.faculties h2 {
+    margin-top: 20px;
+    padding-top: 0.67em;
+    font-size: 20px;
+    color: var(--byu-color);
+    text-align: center;
+}
+.faculties .faculty {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.faculties .faculty_box {
+    box-shadow: 2px 2px 8px rgba(0,0,0,.2);
+    display: flex;
+    max-width: 40%;
+    width: 350px;
+    min-width: 300px;
+    padding: 40px 40px;
+    margin: 10px;
+}
+.faculties .faculty_box:hover {
+    background-color: skyblue;
+}
+
+.faculties .info {
+    margin-left: 20px;
+}
+
+.faculties .name {
+    font-weight: 200;
+    font-size: 18px;
+    text-align: left;
+    margin: 2px 2px 8px 2px;
+}
+.faculties .text {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1rem;
+    margin: 10px 2px;
+    padding: 1px;
+}
+
+.faculties .picture_box {
+    width: 100px; /*can be anything*/
+    position: relative;
+    display:flex;
+    min-width: 65px;
+}
+
+.faculties .picture {
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/*form*/
+.form_container {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.form_container h2 {
+    margin-top: 20px;
+    padding-top: 0.67em;
+    font-size: 20px;
+    color: var(--byu-color);
+    text-align: center;
+}
+.application {
+    border: 2px solid;
+    border-radius: 5px;
+    line-height: 30px;
+    padding: 30px;
+    margin: auto;
+    max-width: 60%;
+}
+.application form {
+    text-align: left;
+    margin: auto;
+    width: 350px;
+    padding: 25px;
+}
+
+input[type=text], select {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email], select {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: var(--byu-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #00264c;
+}
+
+/* Extra Responsive layout */
+@media screen and (max-width: 950px) {
+    .banner img {
+        height: 30%;
+    }
+
+    .home_container .main_content p {
+        max-width: 90%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .application {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    textarea {
+        width: 100%;
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Reviews</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
+</head>
+
+<body>
+  <!--header start-->
+  <header>
+    Department of <span>DANCE</span>
+  </header>
+  <!--header end-->
+  <!--menu start-->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://www.byu.edu">BYU</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="active"><a href="form.html">Form</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--menu end-->
+
+  <!--form start-->
+  <div class="form_container">
+    <h2>Dance Audition Application</h2>
+    <p>Due date: May 4, 2019</p>
+    <hr>
+    <div class="application">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <br>
+        <input type="text" id="fname" name="firstname" placeholder="Your first name">
+        <br>
+        <label for="lname">Last Name</label>
+        <br>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name">
+        <br>
+        <label>
+          <input type="radio" name="subject" value="male"> Male
+          <input type="radio" name="subject" value="female"> Female
+        </label>
+        <br>
+
+        <label for="year">Year of School</label>
+        <br>
+        <select id="year" name="year_school">
+          <option value = "Maths">Freshman</option>
+          <option value = "Physics">Sophomore</option>
+          <option value = "Physics">Junior</option>
+          <option value = "Physics">Senior</option>
+        </select>
+        <br>
+
+        <label for="email">Email Address</label>
+        <br>
+        <input type="email" id="email" name="Email" placeholder="Your Email Address">
+        <br>
+
+        <label for="file">Upload your Resume</label>
+        <br>
+        <input type="file" id="file" name="fileupload" accept="image/*" />
+        <br>
+        <label for="textbox">Tell us about you</label>
+        <br>
+        <textarea id="textbox"rows = "5" cols = "50" name = "description">Describe yourself!</textarea>
+        <br>
+        <br>
+        <input type="submit" name="submit" value="Submit"/>
+      </form>
+    </div>
+  </div>
+  <!--form end-->
+
+  <!--footer start-->
+  <footer>
+    &copy; 2019 Heeseung Hwang. All rights reserved.
+    <br> <a href="https://github.com/BYU-CS-260-Winter-2019/lab-1-tmdtmd1509">
+    Heeseung Hwang's GitHub repository.</a>
+  </footer>
+  <!--footer end-->
+</body>
+
+</html>
